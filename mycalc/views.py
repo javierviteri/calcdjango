@@ -8,14 +8,17 @@ def mostrar (req):
     return render(req,"calc.html")
 
 def calcular (req):
+    c=''
     try:
-        if req.method=="post":
-            n1=eval(req.post.get("num1"))
-            n2=eval(req.post.get("num2"))
-            op=eval(req.post.get("operation"))
+        if req.method=="POST":
+            n1=eval(req.POST.get('num1'))
+            n2=eval(req.POST.get('num2'))
+            op=req.POST.get('operation')
+            print(n1)
+            print(n2)
+            print(op)
             if op=="+":
                 c=n1+n2
-                messages.warning(req, 'Tu perfil ha sido actualizado.')
             elif op=="-":
                 c=n1-n2
             elif op=="*":
@@ -24,6 +27,6 @@ def calcular (req):
                 c=n1/n2            
     except:
         c="Operacion no valida"
-
-    return render(req,"calc.html")
+    print(c)
+    return render(req,"calc.html",{'c':c})
 
