@@ -14,7 +14,7 @@
                   </div>
                 <form class="row g-3" method="post">
                     {% csrf_token %}
-                    <input class="form-control" type="number" placeholder="Nuymero 1" name="num1">
+                    <input class="form-control" type="number" placeholder="Numero 1" name="num1">
                     <select class="form-select" aria-label="Operacion" name = "operation">
                         <option selected>Elija la operacion a realizar</option>
                         <option value="+">+</option>
@@ -22,7 +22,7 @@
                         <option value="*">*</option>
                         <option value="/">/</option>
                     </select>
-                    <input class="form-control" type="number" placeholder="Nuymero 2" name="num2">
+                    <input class="form-control" type="number" placeholder="Numero 2" name="num2">
                     <button class="btn btn-primary" type="submit">Calcular</button>
                     <input class="form-control" value="{{c}}" name="res">
                 </form>
